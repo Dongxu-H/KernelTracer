@@ -1,0 +1,35 @@
+# ======================
+# environment variables
+# ======================
+env:
+  common:
+    HF_ENDPOINT: "https://hf-mirror.com"
+    HF_HOME: "~/.cache/huggingface"
+    HF_HUB_DISABLE_TELEMETRY: "1"
+
+  offline:
+    HF_HUB_OFFLINE: "1"
+    TRANSFORMERS_OFFLINE: "1"
+    HF_DATASETS_OFFLINE: "1"
+
+  vllm_profiler:
+    VLLM_TORCH_PROFILER_WITH_STACK: "1"
+    VLLM_TORCH_PROFILER_RECORD_SHAPES: "1"
+    VLLM_TORCH_PROFILER_WITH_PROFILE_MEMORY: "1"
+    VLLM_TORCH_PROFILER_WITH_FLOPS: "1"
+
+# ======================
+# timeout policy (sec)
+# ======================
+timeouts:
+  download: 3600          # model download
+  hf_trace: 900
+  vllm_trace: 1200
+
+# ======================
+# execution policy
+# ======================
+behavior:
+  bypass_if_exists: true
+  continue_on_failure: true
+  if_exists: skip
