@@ -1,0 +1,9 @@
+{
+  "tracer": "torch_dispatch",
+  "framework": "huggingface",
+  "model": "Qwen3ForCausalLM",
+  "device": "cuda",
+  "mode": "eval",
+  "timestamp": "2026-02-12T03:48:33.523569Z",
+  "success": true
+}

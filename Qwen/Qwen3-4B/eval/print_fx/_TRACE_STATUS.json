@@ -1,0 +1,9 @@
+{
+  "tracer": "print_fx",
+  "framework": "huggingface",
+  "model": "Qwen3ForCausalLM",
+  "device": "cuda",
+  "mode": "eval",
+  "timestamp": "2026-02-12T03:51:39.512995Z",
+  "success": true
+}

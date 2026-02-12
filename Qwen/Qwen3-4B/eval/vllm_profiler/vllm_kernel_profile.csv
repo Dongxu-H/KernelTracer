@@ -1,0 +1,56 @@
+cpu_op_name,cpu_op_total_count,gpu_kernel_name,gpu_kernel_total_count
+aten::lift_fresh,5,,
+aten::select,77,,
+aten::as_strided,551,,
+aten::slice,112,,
+aten::fill_,39,"void at::native::vectorized_elementwise_kernel<2, at::native::FillFunctor<long>, std::array<char*, 1ul> >(int, at::native::FillFunctor<long>, std::array<char*, 1ul>)",1
+,,"void at::native::vectorized_elementwise_kernel<4, at::native::FillFunctor<c10::Half>, std::array<char*, 1ul> >(int, at::native::FillFunctor<c10::Half>, std::array<char*, 1ul>)",36
+aten::copy_,85,Memcpy HtoD (Pinned -> Device),7
+,,"void at::native::unrolled_elementwise_kernel<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#4}::operator()() const::{lambda(long)#1}, std::array<char*, 2ul>, 4, TrivialOffsetCalculator<1, unsigned int>, TrivialOffsetCalculator<1, unsigned int>, at::native::memory::LoadWithCast<1>, at::native::memory::StoreWithCast<1> >(int, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#4}::operator()() const::{lambda(long)#1}, std::array<char*, 2ul>, TrivialOffsetCalculator<1, unsigned int>, TrivialOffsetCalculator<1, unsigned int>, at::native::memory::LoadWithCast<1>, at::native::memory::StoreWithCast<1>)",1
+,,"void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#10}::operator()() const::{lambda(c10::Half)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#10}::operator()() const::{lambda(c10::Half)#1} const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#10}::operator()() const::{lambda(c10::Half)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#10}::operator()() const::{lambda(c10::Half)#1} const&)::{lambda(int)#1})",72
+,,"void at::native::unrolled_elementwise_kernel<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul>, 4, TrivialOffsetCalculator<1, unsigned int>, TrivialOffsetCalculator<1, unsigned int>, at::native::memory::LoadWithCast<1>, at::native::memory::StoreWithCast<1> >(int, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul>, TrivialOffsetCalculator<1, unsigned int>, TrivialOffsetCalculator<1, unsigned int>, at::native::memory::LoadWithCast<1>, at::native::memory::StoreWithCast<1>)",1
+,,Memcpy DtoH (Device -> Pinned),1
+aten::flatten,1,,
+aten::view,326,,
+aten::index_select,2,"void at::native::(anonymous namespace)::indexSelectSmallIndex<c10::Half, long, unsigned int, 2, 2, -2>(at::cuda::detail::TensorInfo<c10::Half, unsigned int>, at::cuda::detail::TensorInfo<c10::Half const, unsigned int>, at::cuda::detail::TensorInfo<long const, unsigned int>, int, int, unsigned int, long)",1
+aten::sub,2,"void at::native::unrolled_elementwise_kernel<at::native::CUDAFunctorOnSelf_add<int>, std::array<char*, 2ul>, 4, TrivialOffsetCalculator<1, unsigned int>, TrivialOffsetCalculator<1, unsigned int>, at::native::memory::LoadWithoutCast, at::native::memory::StoreWithoutCast>(int, at::native::CUDAFunctorOnSelf_add<int>, std::array<char*, 2ul>, TrivialOffsetCalculator<1, unsigned int>, TrivialOffsetCalculator<1, unsigned int>, at::native::memory::LoadWithoutCast, at::native::memory::StoreWithoutCast)",1
+,,"void at::native::unrolled_elementwise_kernel<at::native::CUDAFunctorOnSelf_add<long>, std::array<char*, 2ul>, 4, TrivialOffsetCalculator<1, unsigned int>, TrivialOffsetCalculator<1, unsigned int>, at::native::memory::LoadWithoutCast, at::native::memory::StoreWithoutCast>(int, at::native::CUDAFunctorOnSelf_add<long>, std::array<char*, 2ul>, TrivialOffsetCalculator<1, unsigned int>, TrivialOffsetCalculator<1, unsigned int>, at::native::memory::LoadWithoutCast, at::native::memory::StoreWithoutCast)",1
+aten::to,6,,
+aten::_to_copy,4,,
+aten::empty_strided,113,,
+aten::embedding,1,,
+aten::empty,219,,
+aten::resize_,1,,
+aten::empty_like,181,,
+_C::rms_norm,73,"void vllm::rms_norm_kernel<c10::Half>(c10::Half*, c10::Half const*, long, c10::Half const*, float, int, int)",73
+aten::linear,144,,
+aten::t,144,,
+aten::transpose,144,,
+aten::matmul,144,,
+aten::mm,144,ampere_fp16_s16816gemm_fp16_64x64_sliced1x2_ldg8_f2f_stages_64x5_tn,72
+,,"void cublasLt::splitKreduce_kernel<32, 16, int, __half, __half, float, __half, false, __half, __half, __half, true, false, false>(cublasLt::cublasSplitKParams<float>, __half const*, __half const*, __half*, __half*, float const*, float const*, __half const*, __half const*, __half*, void*, long, float*, int*, float*, float*, float const*, float const*, float const*, float const*, float const*)",72
+aten::split_with_sizes,36,,
+aten::contiguous,72,,
+aten::clone,72,,
+_C::rotary_embedding,36,"void vllm::rotary_embedding_kernel<c10::Half, true>(long const*, c10::Half*, c10::Half*, c10::Half const*, int, long, long, long, int, int, int)",36
+aten::zeros,37,,
+aten::zero_,37,,
+vllm::unified_attention_with_output,36,,
+aten::unbind,39,,
+_C_cache_ops::reshape_and_cache_flash,36,"void vllm::reshape_and_cache_flash_kernel<unsigned short, unsigned short, (vllm::Fp8KVCacheDataType)0>(unsigned short const*, unsigned short const*, unsigned short*, unsigned short*, long const*, long, long, long, long, long, int, int, int, float const*, float const*)",36
+aten::expand,109,,
+_vllm_fa2_C::varlen_fwd,36,"void flash::flash_fwd_splitkv_kernel<Flash_fwd_kernel_traits<128, 64, 128, 4, false, false, cutlass::half_t, Flash_kernel_traits<128, 64, 128, 4, cutlass::half_t> >, true, false, false, false, true, false, false, false>(flash::Flash_fwd_params)",36
+_C::fused_add_rms_norm,72,"std::enable_if<(((8)>(0)))&&vllm::_typeConvert<c10::Half>::exists, void>::type vllm::fused_add_rms_norm_kernel<c10::Half, 8>(c10::Half*, long, c10::Half*, c10::Half const*, float, int, int)",72
+_C::silu_and_mul,36,"void vllm::act_and_mul_kernel<c10::Half, &(c10::Half vllm::silu_kernel<c10::Half>(c10::Half const&)), true>(c10::Half*, c10::Half const*, int)",36
+aten::detach_,1,,
+aten::cumsum,1,,
+aten::index,1,"void at::native::index_elementwise_kernel<128, 4, at::native::gpu_index_kernel<at::native::index_kernel_impl<at::native::OpaqueType<2> >(at::TensorIteratorBase&, c10::ArrayRef<long>, c10::ArrayRef<long>)::{lambda(char*, char const*, long)#1}>(at::TensorIteratorBase&, c10::ArrayRef<long>, c10::ArrayRef<long>, at::native::index_kernel_impl<at::native::OpaqueType<2> >(at::TensorIteratorBase&, c10::ArrayRef<long>, c10::ArrayRef<long>)::{lambda(char*, char const*, long)#1} const&, bool)::{lambda(int)#1}>(long, at::native::gpu_index_kernel<at::native::index_kernel_impl<at::native::OpaqueType<2> >(at::TensorIteratorBase&, c10::ArrayRef<long>, c10::ArrayRef<long>)::{lambda(char*, char const*, long)#1}>(at::TensorIteratorBase&, c10::ArrayRef<long>, c10::ArrayRef<long>, at::native::index_kernel_impl<at::native::OpaqueType<2> >(at::TensorIteratorBase&, c10::ArrayRef<long>, c10::ArrayRef<long>)::{lambda(char*, char const*, long)#1} const&, bool)::{lambda(int)#1})",1
+aten::reshape,1,,
+aten::linalg_vector_norm,1,"void at::native::reduce_kernel<512, 1, at::native::ReduceOp<float, at::native::NormTwoOps<float, float, float>, unsigned int, float, 4, 4> >(at::native::ReduceOp<float, at::native::NormTwoOps<float, float, float>, unsigned int, float, 4, 4>)",1
+aten::clamp_min,1,"void at::native::vectorized_elementwise_kernel<4, at::native::(anonymous namespace)::launch_clamp_scalar(at::TensorIteratorBase&, c10::Scalar, c10::Scalar, at::native::detail::ClampLimits)::{lambda()#1}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul> >(int, at::native::(anonymous namespace)::launch_clamp_scalar(at::TensorIteratorBase&, c10::Scalar, c10::Scalar, at::native::detail::ClampLimits)::{lambda()#1}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul>)",1
+aten::expand_as,1,,
+aten::div,1,"void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl_nocast<at::native::BinaryFunctor<float, float, float, at::native::binary_internal::DivFunctor<float> > >(at::TensorIteratorBase&, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::DivFunctor<float> > const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::BinaryFunctor<float, float, float, at::native::binary_internal::DivFunctor<float> > >(at::TensorIteratorBase&, at::native::BinaryFunctor<float, float, float, at::native::binary_internal::DivFunctor<float> > const&)::{lambda(int)#1})",1
+aten::eq,1,,
+aten::is_nonzero,1,,
+aten::item,1,,
+aten::_local_scalar_dense,1,,

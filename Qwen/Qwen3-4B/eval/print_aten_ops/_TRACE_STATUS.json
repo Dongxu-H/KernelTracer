@@ -1,0 +1,9 @@
+{
+  "tracer": "print_aten_ops",
+  "framework": "huggingface",
+  "model": "Qwen3ForCausalLM",
+  "device": "cuda",
+  "mode": "eval",
+  "timestamp": "2026-02-12T03:51:12.544352Z",
+  "success": true
+}
